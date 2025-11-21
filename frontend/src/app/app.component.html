@@ -1,0 +1,14 @@
+<main>
+  <section class="card">
+    <h1>{{ title }}</h1>
+    <p>点击按钮获取熊熊的今日午餐推荐。</p>
+    <button type="button" (click)="fetchRecommendation()" [disabled]="loading()">
+      {{ loading() ? '努力思考中…' : '熊熊今天吃什么' }}
+    </button>
+    <p class="error" *ngIf="errorMessage()">{{ errorMessage() }}</p>
+    <div class="result" *ngIf="recommendation()">
+      <h2>今天推荐：</h2>
+      <p>{{ recommendation() }}</p>
+    </div>
+  </section>
+</main>
